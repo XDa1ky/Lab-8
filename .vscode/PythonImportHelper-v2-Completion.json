@@ -1,0 +1,155 @@
+[
+    {
+        "label": "cv2",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "cv2",
+        "description": "cv2",
+        "detail": "cv2",
+        "documentation": {}
+    },
+    {
+        "label": "mediapipe",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "mediapipe",
+        "description": "mediapipe",
+        "detail": "mediapipe",
+        "documentation": {}
+    },
+    {
+        "label": "time",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "time",
+        "description": "time",
+        "detail": "time",
+        "documentation": {}
+    },
+    {
+        "label": "numpy",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "numpy",
+        "description": "numpy",
+        "detail": "numpy",
+        "documentation": {}
+    },
+    {
+        "label": "plateCascade",
+        "kind": 5,
+        "importPath": "haar",
+        "description": "haar",
+        "peekOfCode": "plateCascade = cv2.CascadeClassifier('haarcascade_plate_number.xml')\nminArea = 500\nimg = cv2.imread('im14.jpg')\ngray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)\nplates = plateCascade.detectMultiScale(gray, 1.1, 4)\nfor (x, y, w, h) in plates:\n    area = w * h\n    if area > minArea:\n        cv2.rectangle(img, (x, y), (x+w, y+h), (255, 0, 0), 2)\n        imgROI = img[y:y+h, x:x+w]",
+        "detail": "haar",
+        "documentation": {}
+    },
+    {
+        "label": "minArea",
+        "kind": 5,
+        "importPath": "haar",
+        "description": "haar",
+        "peekOfCode": "minArea = 500\nimg = cv2.imread('im14.jpg')\ngray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)\nplates = plateCascade.detectMultiScale(gray, 1.1, 4)\nfor (x, y, w, h) in plates:\n    area = w * h\n    if area > minArea:\n        cv2.rectangle(img, (x, y), (x+w, y+h), (255, 0, 0), 2)\n        imgROI = img[y:y+h, x:x+w]\n        cv2.imshow('ROI', imgROI)",
+        "detail": "haar",
+        "documentation": {}
+    },
+    {
+        "label": "img",
+        "kind": 5,
+        "importPath": "haar",
+        "description": "haar",
+        "peekOfCode": "img = cv2.imread('im14.jpg')\ngray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)\nplates = plateCascade.detectMultiScale(gray, 1.1, 4)\nfor (x, y, w, h) in plates:\n    area = w * h\n    if area > minArea:\n        cv2.rectangle(img, (x, y), (x+w, y+h), (255, 0, 0), 2)\n        imgROI = img[y:y+h, x:x+w]\n        cv2.imshow('ROI', imgROI)\ncv2.imshow(\"image\", img)",
+        "detail": "haar",
+        "documentation": {}
+    },
+    {
+        "label": "gray",
+        "kind": 5,
+        "importPath": "haar",
+        "description": "haar",
+        "peekOfCode": "gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)\nplates = plateCascade.detectMultiScale(gray, 1.1, 4)\nfor (x, y, w, h) in plates:\n    area = w * h\n    if area > minArea:\n        cv2.rectangle(img, (x, y), (x+w, y+h), (255, 0, 0), 2)\n        imgROI = img[y:y+h, x:x+w]\n        cv2.imshow('ROI', imgROI)\ncv2.imshow(\"image\", img)\ncv2.waitKey(0)",
+        "detail": "haar",
+        "documentation": {}
+    },
+    {
+        "label": "plates",
+        "kind": 5,
+        "importPath": "haar",
+        "description": "haar",
+        "peekOfCode": "plates = plateCascade.detectMultiScale(gray, 1.1, 4)\nfor (x, y, w, h) in plates:\n    area = w * h\n    if area > minArea:\n        cv2.rectangle(img, (x, y), (x+w, y+h), (255, 0, 0), 2)\n        imgROI = img[y:y+h, x:x+w]\n        cv2.imshow('ROI', imgROI)\ncv2.imshow(\"image\", img)\ncv2.waitKey(0)\ncv2.destroyAllWindows()",
+        "detail": "haar",
+        "documentation": {}
+    },
+    {
+        "label": "cap",
+        "kind": 5,
+        "importPath": "l4",
+        "description": "l4",
+        "peekOfCode": "cap = cv2.VideoCapture(1)\nmpHands = mp.solutions.hands\nhands = mpHands.Hands()\nmpDraw = mp.solutions.drawing_utils\npress_count = 0\nwhile True:\n    ret, frame = cap.read()\n    if not ret:\n        break\n    h, w, c = frame.shape",
+        "detail": "l4",
+        "documentation": {}
+    },
+    {
+        "label": "mpHands",
+        "kind": 5,
+        "importPath": "l4",
+        "description": "l4",
+        "peekOfCode": "mpHands = mp.solutions.hands\nhands = mpHands.Hands()\nmpDraw = mp.solutions.drawing_utils\npress_count = 0\nwhile True:\n    ret, frame = cap.read()\n    if not ret:\n        break\n    h, w, c = frame.shape\n    frameRGB = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)",
+        "detail": "l4",
+        "documentation": {}
+    },
+    {
+        "label": "hands",
+        "kind": 5,
+        "importPath": "l4",
+        "description": "l4",
+        "peekOfCode": "hands = mpHands.Hands()\nmpDraw = mp.solutions.drawing_utils\npress_count = 0\nwhile True:\n    ret, frame = cap.read()\n    if not ret:\n        break\n    h, w, c = frame.shape\n    frameRGB = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)\n    results = hands.process(frameRGB)",
+        "detail": "l4",
+        "documentation": {}
+    },
+    {
+        "label": "mpDraw",
+        "kind": 5,
+        "importPath": "l4",
+        "description": "l4",
+        "peekOfCode": "mpDraw = mp.solutions.drawing_utils\npress_count = 0\nwhile True:\n    ret, frame = cap.read()\n    if not ret:\n        break\n    h, w, c = frame.shape\n    frameRGB = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)\n    results = hands.process(frameRGB)\n    if results.multi_hand_landmarks:",
+        "detail": "l4",
+        "documentation": {}
+    },
+    {
+        "label": "press_count",
+        "kind": 5,
+        "importPath": "l4",
+        "description": "l4",
+        "peekOfCode": "press_count = 0\nwhile True:\n    ret, frame = cap.read()\n    if not ret:\n        break\n    h, w, c = frame.shape\n    frameRGB = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)\n    results = hands.process(frameRGB)\n    if results.multi_hand_landmarks:\n        for handLms in results.multi_hand_landmarks:",
+        "detail": "l4",
+        "documentation": {}
+    },
+    {
+        "label": "image_processing",
+        "kind": 2,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "def image_processing():\n    img = cv2.imread('img_test.jpg')\n    #cv2.imshow('image', img)\n    w, h = img.shape[:2]\n    #(cX, cY) = (w // 2, h // 2)\n    #M = cv2.getRotationMatrix2D((cX, cY), 45, 1.0)\n    #rotated = cv2.warpAffine(img, M, (w, h))\n    #cv2.imshow('rotated', rotated)\n    #cat = img[250:580, 20:280]\n    #cv2.imshow('image', cat)",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "video_processing",
+        "kind": 2,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "def video_processing():\n    cap = cv2.VideoCapture(1)\n    down_points = (640, 480)\n    i = 0\n    while True:\n        ret, frame = cap.read()\n        if not ret:\n            break\n        frame = cv2.resize(frame, down_points, interpolation=cv2.INTER_LINEAR)\n        gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "add_gaussian_noise",
+        "kind": 2,
+        "importPath": "tsk1",
+        "description": "tsk1",
+        "peekOfCode": "def add_gaussian_noise(img, sigma=30):\n    noise = np.random.normal(0, sigma, img.shape).astype(np.float32)\n    noisy = img.astype(np.float32) + noise\n    return np.clip(noisy, 0, 255).astype(np.uint8)\nif __name__ == \"__main__\":\n    # Укажите свой путь и расширение:\n    path_in  = r\"images\\variant-5.jpg\"\n    path_out = r\"images\\variant-5_noisy.jpg\"\n    img = cv2.imread(path_in)\n    if img is None:",
+        "detail": "tsk1",
+        "documentation": {}
+    }
+]
