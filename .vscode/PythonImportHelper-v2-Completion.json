@@ -36,6 +36,15 @@
         "documentation": {}
     },
     {
+        "label": "os",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "os",
+        "description": "os",
+        "detail": "os",
+        "documentation": {}
+    },
+    {
         "label": "template",
         "kind": 5,
         "importPath": "extra_tsk",
@@ -186,6 +195,24 @@
         "description": "tsk1",
         "peekOfCode": "def add_gaussian_noise(img, sigma=30):\n    noise = np.random.normal(0, sigma, img.shape).astype(np.float32)\n    noisy = img.astype(np.float32) + noise\n    return np.clip(noisy, 0, 255).astype(np.uint8)\nif __name__ == \"__main__\":\n    # Укажите свой путь и расширение:\n    path_in  = r\"images\\variant-5.jpg\"\n    path_out = r\"images\\variant-5_noisy.jpg\"\n    img = cv2.imread(path_in)\n    if img is None:",
         "detail": "tsk1",
+        "documentation": {}
+    },
+    {
+        "label": "overlay_image_alpha",
+        "kind": 2,
+        "importPath": "tsk2(try2)",
+        "description": "tsk2(try2)",
+        "peekOfCode": "def overlay_image_alpha(background, overlay, x, y):\n    # Размеры фона и накладываемого изображения\n    bg_h, bg_w = background.shape[:2]\n    ol_h, ol_w = overlay.shape[:2]\n    # Если часть накладываемого изображения выходит за границы фона, подрезаем\n    if x >= bg_w or y >= bg_h:\n        return background  # ничего не накладываем, т.к. за пределами\n    if x + ol_w > bg_w:\n        ol_w = bg_w - x\n        overlay = overlay[:, :ol_w]",
+        "detail": "tsk2(try2)",
+        "documentation": {}
+    },
+    {
+        "label": "main",
+        "kind": 2,
+        "importPath": "tsk2(try2)",
+        "description": "tsk2(try2)",
+        "peekOfCode": "def main():\n    # Пути к файлам\n    template_path = \"ref-point.jpg\"    \n    fly_path      = \"fly64.png\"        \n    if not os.path.isfile(template_path):\n        raise FileNotFoundError(f\"Шаблон метки не найден по пути: {template_path}\")\n    if not os.path.isfile(fly_path):\n        raise FileNotFoundError(f\"Изображение мухи не найдено по пути: {fly_path}\")\n    # Загружаем шаблон (градационное изображение)\n    template = cv2.imread(template_path, cv2.IMREAD_GRAYSCALE)",
+        "detail": "tsk2(try2)",
         "documentation": {}
     },
     {
